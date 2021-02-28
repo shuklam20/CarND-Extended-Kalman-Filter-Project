@@ -71,11 +71,6 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
                       0,
                       0;
         }
-        // Deal with the special case initialisation problems
-        if (fabs(ekf_.x_(0)) < 0.0001 and fabs(ekf_.x_(1)) < 0.0001){
-            ekf_.x_(0) = 0.0001;
-            ekf_.x_(1) = 0.0001;
-        }
         
         // state covariance matrix P
         ekf_.P_ = MatrixXd(4, 4);
