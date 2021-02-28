@@ -46,6 +46,12 @@ class KalmanFilter {
    */
   void UpdateEKF(const Eigen::VectorXd &z);
 
+  /**
+   * Function which takes y and calculates remainder of the
+   * values of the update function
+   */
+  void UpdateEKFOut(const Eigen::VectorXd &y);
+
   // state vector
   Eigen::VectorXd x_;
 
