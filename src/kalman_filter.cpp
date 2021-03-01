@@ -1,5 +1,4 @@
 #include "kalman_filter.h"
-
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
@@ -39,7 +38,7 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
    * TODO: update the state by using Extended Kalman Filter equations
    */
     double ro = sqrt(x_(0)*x_(0) + x_(1)*x_(1));
-    double phi = atan(x_(1) / x_(0));
+    double phi = atan2(x_(1), x_(0));
     double ro_dot = (x_(0)*x_(2) + x_(1)*x_(3)) / ro;
     while (phi > M_PI) {
         phi -= M_PI * 2;

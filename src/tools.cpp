@@ -50,7 +50,7 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
     // pre-compute a set of terms to avoid repeated calculation
     float c1 = px*px + py*py;
     // check division by zero
-    if (fabs(c1) < 0.0000001) {
+    if (fabs(c1) < 0.00001) {
         c1 = 0.00001;
     }
     float c2 = sqrt(c1);
